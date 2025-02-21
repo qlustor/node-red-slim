@@ -1,4 +1,4 @@
-FROM alpine:3.18 AS base
+FROM alpine:3.21 AS base
 
 LABEL AUTHOR="Corey Thompson <corey.dwayne.thompson@gmail.com>"
 
@@ -9,7 +9,7 @@ RUN apk add --no-cache \
     adduser -h /usr/src/node-red -D -H node-red -u 1000 && \
     chown -R node-red:node-red /data 
 
-FROM nodered/node-red:3.1.0-18-minimal AS build
+FROM nodered/node-red:4.0.9-22-minimal AS build
 
 COPY package.json .
 
