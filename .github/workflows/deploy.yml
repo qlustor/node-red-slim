@@ -28,10 +28,10 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Setup up Python 3.8      
+      - name: Setup up Python 3.13      
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.13
       
       - name: clone repo
         uses: actions/checkout@v2
@@ -73,8 +73,8 @@ jobs:
             type=semver,pattern={{major}}
             type=sha     
             type=raw,value=latest,enable={{is_default_branch}}
-            #image is using node red 3.1.0 w/ node v18
-            type=raw,value=3.1.0-18,enable={{is_default_branch}}
+            #image is using node red 4.0.9 w/ node v22
+            type=raw,value=4.0.9-22,enable={{is_default_branch}}
 
       - name: Setup QEMU
         uses: docker/setup-qemu-action@v1
